@@ -1,7 +1,8 @@
-function SimpleModal(options) {
-    this.header = options.header || 'An Eye-Catching Headline';
-    this.body = options.body || 'Your message goes here.';
-    this.footer = options.footer || 'Thank you for being awesome!';
+function SimpleModal(settings) {
+    var options = settings || {"header":'An Eye-Catching Headline',"body":'Your message goes here.',"footer":'Thank you for being awesome!'};
+    this.header = options.header;
+    this.body = options.body;
+    this.footer = options.footer;
     this.init();
     this.overlay = document.querySelector('.modal-overlay');
 }
