@@ -24,11 +24,13 @@ var SimpleModal = {
     modal.appendChild(footer);
     overlay.appendChild(modal);
     closeBtn.addEventListener('click', this.toggle.bind(this), false);
+    overlay.addEventListener('click', this.toggle.bind(this), false);
     doc.addEventListener('keyup', function(evt) {
-        var e = evt || window.event
+        var e = evt || window.event;
         if (e.keyCode === 27) { sm.toggle(); }
-    })
+    });
     doc.body.appendChild(overlay);
+    return overlay;
   },
 
   makeElement: function(type, name, text) {
@@ -41,8 +43,10 @@ var SimpleModal = {
   toggle: function() {
     var el = document.querySelector('.modal-overlay');
     el.classList.toggle('modal-hidden');
+    return el;
   }
 };
 
-var modal = SimpleModal.init();
+var modal = SimpleModal;
+modal.init();
 modal.toggle();
