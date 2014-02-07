@@ -56,11 +56,3 @@ SimpleModal.prototype.hide = function() {
 SimpleModal.prototype.toggle = function() {
     return this.overlay.classList.toggle('modal-hidden');
 };
-
-var modal = new SimpleModal({
-    "header": "Hello World",
-    "body": "This is my super important message.",
-    "footer": "I'm so awesome!"
-});
-
-modal.show();
